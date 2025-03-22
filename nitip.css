@@ -1,0 +1,173 @@
+/* Reset default styles */
+
+* {
+    padding: 0;
+    margin: 0;
+    font-family: sans-serif;
+    box-sizing: border-box;
+}
+
+
+/* Hero section */
+
+.hero5 {
+    width: 100%;
+    height: 100vh;
+    background: #181818;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+/* Navigation */
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 8%;
+    width: 100%;
+}
+
+.logo {
+    color: #fafafa;
+    font-size: 28px;
+    letter-spacing: 1px;
+    cursor: pointer;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 16px;
+    padding: 10px 15px;
+}
+
+nav ul li a:hover {
+    color: #808080;
+    transition: .4s;
+}
+
+
+/* Content Section */
+
+.container3 {
+    padding: 50px 0;
+    text-align: center;
+}
+
+.content-slide3 {
+    max-width: 90%;
+    margin: auto;
+    position: relative;
+}
+
+.imgslide img {
+    max-width: 100%;
+    height: auto;
+}
+
+
+/* Navigation arrows */
+
+.prev,
+.next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 12px;
+    color: white;
+    font-size: 18px;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.6);
+    transform: translateY(-50%);
+}
+
+.next {
+    right: 0;
+}
+
+
+/* Dots indicator */
+
+.page3 {
+    text-align: center;
+    margin-top: 15px;
+}
+
+.page3 .dot {
+    cursor: pointer;
+    height: 12px;
+    width: 12px;
+    margin: 0 5px;
+    background-color: white;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+    border-radius: 50%;
+}
+
+.page3 .active,
+.page3 .dot:hover {
+    background-color: silver;
+}
+
+
+/* Project Info */
+
+.nitip-text {
+    width: 80%;
+    max-width: 500px;
+    text-align: center;
+    color: white;
+    margin: 20px auto;
+}
+
+.nitip-text h2 {
+    font-size: 20px;
+}
+
+.nitip-text h5,
+.nitip-text h4 {
+    font-size: 16px;
+    margin-top: 5px;
+}
+
+
+/* Responsive Design */
+
+@media screen and (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        text-align: center;
+    }
+    nav ul {
+        flex-direction: column;
+        padding: 10px 0;
+    }
+    .content-slide3 {
+        padding: 10px;
+    }
+    .prev,
+    .next {
+        font-size: 14px;
+        padding: 8px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .logo {
+        font-size: 24px;
+    }
+    .nitip-text h2 {
+        font-size: 18px;
+    }
+}
