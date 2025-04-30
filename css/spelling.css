@@ -1,0 +1,253 @@
+/* Reset default styles */
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+
+/* Main Color */
+
+:root {
+    --lightpurple: #bde1ff;
+    --poppins: 'Poppins', sans-serif;
+    --black: #000000;
+    --abril: 'Abril Fatface', cursive;
+    --lato: 'Lato', sans-serif;
+    --purple: #000000;
+    --darkgray: #6E6C78;
+    --white: #FFFFFF;
+    --lightgray: #898796;
+}
+
+::selection {
+    color: var(--lightpurple);
+    background: CornflowerBlue;
+    background-color: var(--black);
+}
+
+.nav-scrolled {
+    background: white !important;
+}
+
+
+/*Navbar*/
+
+.navbar {
+    font-family: var(--poppins);
+    background-color: white;
+}
+
+.navbar .container-fluid {
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+.navbar-toggler {
+    border: none !important;
+}
+
+.navbar-toggler:focus,
+.navbar-toggler:active,
+.navbar-toggler-icon:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+.navbar .container-fluid .navbar-item {
+    font-size: 28.5px;
+    letter-spacing: 2px;
+    font-weight: 550;
+    color: black;
+    text-decoration: none;
+}
+
+.navbar .container-fluid .span {
+    color: var(--purple)
+}
+
+.navbar .navbar-nav .nav-item a {
+    font-weight: 400;
+    font-size: 20px;
+    text-transform: uppercase;
+    color: black;
+}
+
+.d-flex .btn {
+    font-size: 15px;
+    background-color: black;
+    border-radius: 50px;
+    color: var(--white);
+    text-transform: uppercase;
+    padding: 13px 19px;
+}
+
+.d-flex .btn:hover {
+    background-color: var(--purple);
+    color: var(--white);
+    transition: 0.5;
+}
+
+.container {
+    padding: 30px 0 0 0;
+    margin-left: 170px;
+}
+
+.content-slide {
+    max-width: 1000px;
+    position: relative;
+    margin: auto;
+}
+
+.imgslide {
+    display: block;
+}
+
+.prev,
+.next {
+    cursor: pointer;
+    position: absolute;
+    top: 40%;
+    width: auto;
+    padding: 16px;
+    color: rgb(255, 255, 224);
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+pre:hover,
+.next:hover {
+    background-color: rgba(255, 255, 255, 0.8);
+    color: rgb(0, 0, 0);
+}
+
+.content-slide .numberslide {
+    color: white;
+    font-size: 12px;
+    padding: 8px 12px;
+    position: absolute;
+    top: 0;
+}
+
+
+/*responsive*/
+
+@media screen and (max-width: 800px) {
+    .content-slide {
+        padding: 8px 50px 12px 50px;
+    }
+    .next {
+        right: 50px;
+        border-radius: 3px 0 0 3px;
+    }
+}
+
+.fade {
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 1.5s;
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+.fade {
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 1.5s;
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+@keyframes fade {
+    from {
+        opacity: 0.4;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.container .page {
+    text-align: center;
+    padding-top: 20px;
+    margin-right: 200px;
+}
+
+.page .dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: rgb(0, 0, 0);
+    display: inline-block;
+    transition: background-color 0.6s ease;
+    border-radius: 50%;
+}
+
+.page .active,
+.page .dot:hover {
+    background-color: silver;
+}
+
+.spelling {
+    width: 100%;
+    /* Memastikan lebar elemen memenuhi layar */
+    height: 93vh;
+    /* Memastikan tinggi elemen memenuhi layar */
+    padding: 70px 0px;
+    /* Padding tetap ada */
+    background-color: #ffffff;
+    /* Warna background gelap */
+    box-sizing: border-box;
+    /* Agar padding tidak menambah ukuran elemen */
+}
+
+.spelling img {
+    height: auto;
+    width: 430px;
+}
+
+.spelling-text {
+    width: 550px;
+}
+
+.main4 {
+    width: 1130px;
+    max-width: 95%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.spelling-text h2 {
+    color: rgb(0, 0, 0);
+    letter-spacing: 2px;
+    font-size: 18px;
+    margin-bottom: 25px;
+    text-transform: capitalize;
+}
+
+.spelling-text h5 {
+    color: rgb(0, 0, 0);
+    letter-spacing: 2px;
+    font-size: 15px;
+    margin-bottom: 25px;
+    text-transform: capitalize;
+}
+
+.spelling-text p {
+    color: rgb(0, 0, 0);
+    letter-spacing: 2px;
+    line-height: 28px;
+    font-size: 15px;
+    margin-bottom: 45px;
+}

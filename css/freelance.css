@@ -1,66 +1,111 @@
+/* Reset default styles */
+
 * {
     padding: 0;
     margin: 0;
-    font-family: sans-serif;
     box-sizing: border-box;
 }
-.hero {
-    width: 100%;
-    height: 100vh;
-    background: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0)),url(img/background.jpg);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-}
-.hero {
-    width: 100%;
-    height: 100vh;
-    background: #181818;
-}
-nav {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 45px 8% 0 8%;
-}
-.logo {
-    color: #fafafa;
-    font-size: 35px;
-    letter-spacing: 1px;
-    cursor: pointer;
-}
-nav ul li {
-    list-style: none;
-    display: inline-block;
-    padding: 10px 25px;
-    font-weight: bold;
-}
-nav ul li a {
-    text-decoration: none;
-    color: #fff;
-}
-nav ul li a:hover {
-    color: #808080;
-    transition: .4s;
+
+
+/* Main Color */
+
+:root {
+    --lightpurple: #bde1ff;
+    --poppins: 'Poppins', sans-serif;
+    --black: #000000;
+    --abril: 'Abril Fatface', cursive;
+    --lato: 'Lato', sans-serif;
+    --purple: #000000;
+    --darkgray: #6E6C78;
+    --white: #FFFFFF;
+    --lightgray: #898796;
 }
 
-.a-navbar {
-    color: white;
+::selection {
+    color: var(--lightpurple);
+    background: CornflowerBlue;
+    background-color: var(--black);
+}
+
+.nav-scrolled {
+    background: white !important;
+}
+
+
+/*Navbar*/
+
+.navbar {
+    font-family: var(--poppins);
+    background-color: white;
+}
+
+.navbar .container-fluid {
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+.navbar-toggler {
+    border: none !important;
+}
+
+.navbar-toggler:focus,
+.navbar-toggler:active,
+.navbar-toggler-icon:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+.navbar .container-fluid .navbar-item {
+    font-size: 28.5px;
+    letter-spacing: 2px;
+    font-weight: 550;
+    color: black;
     text-decoration: none;
 }
+
+.navbar .container-fluid .span {
+    color: var(--purple)
+}
+
+.navbar .navbar-nav .nav-item a {
+    font-weight: 400;
+    font-size: 20px;
+    text-transform: uppercase;
+    color: black;
+}
+
+.d-flex .btn {
+    font-size: 15px;
+    background-color: black;
+    border-radius: 50px;
+    color: var(--white);
+    text-transform: uppercase;
+    padding: 13px 19px;
+}
+
+.d-flex .btn:hover {
+    background-color: var(--purple);
+    color: var(--white);
+    transition: 0.5;
+}
+
 .container {
     padding: 30px 0 0 0;
     margin-left: 170px;
 }
+
 .content-slide {
     max-width: 1000px;
     position: relative;
     margin: auto;
 }
+
 .imgslide {
     display: block;
 }
-.prev, .next {
+
+.prev,
+.next {
     cursor: pointer;
     position: absolute;
     top: 40%;
@@ -72,16 +117,20 @@ nav ul li a:hover {
     transition: 0.6s ease;
     border-radius: 0 3px 3px 0;
     user-select: none;
-    background-color: rgba(0,0,0,0.8);
+    background-color: rgba(0, 0, 0, 0.8);
 }
+
 .next {
     right: 0;
     border-radius: 3px 0 0 3px;
 }
-pre:hover, .next:hover {
+
+pre:hover,
+.next:hover {
     background-color: rgba(255, 255, 255, 0.8);
-    color: rgb(0,0,0);
+    color: rgb(0, 0, 0);
 }
+
 .content-slide .numberslide {
     color: white;
     font-size: 12px;
@@ -89,17 +138,20 @@ pre:hover, .next:hover {
     position: absolute;
     top: 0;
 }
+
+
 /*responsive*/
+
 @media screen and (max-width: 800px) {
     .content-slide {
         padding: 8px 50px 12px 50px;
     }
-
     .next {
         right: 50px;
         border-radius: 3px 0 0 3px;
     }
 }
+
 .fade {
     -webkit-animation-name: fade;
     -webkit-animation-duration: 1.5s;
@@ -107,15 +159,22 @@ pre:hover, .next:hover {
     animation-duration: 1.5s;
 }
 
-@-webkit-keyframes fade {
-    from{opacity: .4;}
-    to{opacity: 1}
+.fade {
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 1.5s;
+    animation-name: fade;
+    animation-duration: 1.5s;
 }
 
 @keyframes fade {
-    from{opacity: .4;}
-    to{opacity: 1;}
+    from {
+        opacity: 0.4;
+    }
+    to {
+        opacity: 1;
+    }
 }
+
 .container .page {
     text-align: center;
     padding-top: 20px;
@@ -127,17 +186,21 @@ pre:hover, .next:hover {
     height: 15px;
     width: 15px;
     margin: 0 2px;
-    background-color: white;
+    background-color: rgb(0, 0, 0);
     display: inline-block;
     transition: background-color 0.6s ease;
     border-radius: 50%;
 }
-.page .active, .page .dot:hover {
+
+.page .active,
+.page .dot:hover {
     background-color: silver;
 }
+
 .freelance-text {
     width: 1100px;
 }
+
 .main {
     width: 1150px;
     max-width: 95%;
@@ -146,8 +209,9 @@ pre:hover, .next:hover {
     align-items: center;
     justify-content: top;
 }
+
 .freelance-text h2 {
-    color: white;
+    color: rgb(0, 0, 0);
     letter-spacing: 2px;
     font-size: 18px;
     margin-bottom: 25px;
@@ -156,8 +220,9 @@ pre:hover, .next:hover {
     padding: 5%;
     margin-top: -50px;
 }
+
 .freelance-text h5 {
-    color: white;
+    color: rgb(0, 0, 0);
     letter-spacing: 2px;
     line-height: 28px;
     font-size: 15px;
@@ -166,8 +231,9 @@ pre:hover, .next:hover {
     margin-top: -100px;
     margin-bottom: 45px;
 }
+
 .freelance-text h4 {
-    color: white;
+    color: rgb(0, 0, 0);
     letter-spacing: 2px;
     line-height: 28px;
     font-size: 15px;
