@@ -1,5 +1,3 @@
-/* Reset default styles */
-
 * {
     padding: 0;
     margin: 0;
@@ -86,63 +84,55 @@
 }
 
 .d-flex .btn {
-    font-size: 15px;
+    font-size: 0.9rem;
     background-color: black;
     border-radius: 50px;
     color: var(--white);
     text-transform: uppercase;
-    padding: 13px 19px;
+    padding: 10px 16px;
+    transition: 0.3s;
 }
 
 .d-flex .btn:hover {
     background-color: var(--purple);
     color: var(--white);
-    transition: 0.5;
 }
 
+/*Contact*/
 
-/* Content Section */
-
-.spelling img {
-    display: block;
-    margin: 0 auto;
-    width: 430px;
-    height: auto;
-    margin-bottom: 20px;
-    margin-top: 30px;
+#contact {
+    padding: 6rem 0;
+    background-image: url(img/6.png);
+    background-size: cover;
 }
 
-/* Project Info */
+.img-contact {
+    margin-top: -1.5rem;
+}
 
-.spelling-text {
-    width: 90%;
-    max-width: 900px;
+.contact-title h1 {
+    text-transform: capitalize;
+    font-family: var(--abril);
+    font-size: 50px;
     text-align: center;
-    color: #000;
-    margin: 20px auto;
-    padding: 10px 20px;
-    line-height: 1.7;
-    font-weight: bold;
+    padding-bottom: 2rem;
 }
 
-.spelling-text h2 {
-    font-size: 20px;
-    font-weight: 600;
-    margin-bottom: 15px;
-    font-weight: bold;
+.contact-title span {
+    color: var(--purple);
 }
 
-.spelling-text h3 {
-    font-size: 18px;
-    font-weight: 600;
-    margin-bottom: 15px;
-    font-weight: bold;
+#contact form .form-label {
+    font-family: var(--poppins);
+    font-size: 22px;
 }
 
-.spelling-text h5,
-.spelling-text h4 {
-    font-size: 16px;
-    font-weight: 400;
-    margin-top: 10px;
-    font-weight: bold;
+#contact form input {
+    border-radius: 0%;
+    color: var(--purple);
+}
+
+#contact textarea {
+    border-radius: 0%;
+    color: var(--purple);
 }

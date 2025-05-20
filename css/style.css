@@ -17,7 +17,8 @@ body{
     height: 100%;
     z-index: -1;
     background-color: #ffffff; /* Bisa kamu ubah sesuai warna yang kamu mau */
-  }
+    pointer-events: auto;
+}
 /* Main Color */
 
 :root {
@@ -48,6 +49,8 @@ body{
 .navbar {
     font-family: var(--poppins);
     background-color: white;
+    padding: 0 20px;
+    height: 80px;
 }
 
 .navbar-toggler {
@@ -262,7 +265,6 @@ body{
 
 #project {
     padding: 5rem 0;
-    background-image: url(img/back.png);
     background-size: cover
 }
 
@@ -273,6 +275,8 @@ body{
     width: 60.5px;
     top: 45%;
     left: 5%;
+    transform: translateY(-50%);
+    background-color: #000000;
 }
 
 #carouselExampleFade .carousel-control-next {
@@ -282,6 +286,13 @@ body{
     width: 60.5px;
     top: 45%;
     right: 5%;
+    transform: translateY(-50%);
+    background-color: #000000;
+}
+
+.carousel-inner img {
+    max-height: 550px;
+    object-fit: contain;
 }
 
 .title-project h1 {
@@ -302,55 +313,6 @@ body{
 .title-project span {
     color: var(--purple);
 }
-
-.spelling {
-    width: 1519px;
-    padding: 70px 0px;
-    background-color: #181818;
-}
-
-.spelling img {
-    height: auto;
-    width: 430px;
-}
-
-.spelling-text {
-    width: 550px;
-}
-
-.main4 {
-    width: 1130px;
-    max-width: 95%;
-    margin: 0 auto;
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-}
-
-.spelling-text h2 {
-    color: white;
-    letter-spacing: 2px;
-    font-size: 18px;
-    margin-bottom: 25px;
-    text-transform: capitalize;
-}
-
-.spelling-text h5 {
-    color: white;
-    letter-spacing: 2px;
-    font-size: 15px;
-    margin-bottom: 25px;
-    text-transform: capitalize;
-}
-
-.spelling-text p {
-    color: white;
-    letter-spacing: 2px;
-    line-height: 28px;
-    font-size: 15px;
-    margin-bottom: 45px;
-}
-
 
 /*skills&toools*/
 

@@ -1,11 +1,14 @@
-/* Reset default styles */
-
 * {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
 }
 
+body{
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+}
 #particles-js {
     position: fixed;
     top: 0;
@@ -100,49 +103,35 @@
     transition: 0.5;
 }
 
+#skills {
+    padding: 2rem 0;
+}
 
-/* Content Section */
+.title-skills h1 {
+    font-family: var(--abril);
+    font-size: 50px;
+    padding-bottom: 4rem;
+    padding-left: 4rem;
+}
 
-.spelling img {
+.title-skills h1:after {
+    content: '';
     display: block;
-    margin: 0 auto;
-    width: 430px;
-    height: auto;
-    margin-bottom: 20px;
-    margin-top: 30px;
+    border-bottom: 7px solid var(--purple);
+    width: 8%;
+    padding-bottom: 9px;
+    margin-bottom: -9px;
 }
 
-/* Project Info */
-
-.spelling-text {
-    width: 90%;
-    max-width: 900px;
-    text-align: center;
-    color: #000;
-    margin: 20px auto;
-    padding: 10px 20px;
-    line-height: 1.7;
-    font-weight: bold;
+.title-skills span {
+    color: var(--purple);
 }
 
-.spelling-text h2 {
-    font-size: 20px;
-    font-weight: 600;
-    margin-bottom: 15px;
-    font-weight: bold;
+#skills .container-fluid .gambar-skills .col-lg-3 {
+    padding-bottom: 3.5rem;
+    padding-left: 2.5rem;
 }
 
-.spelling-text h3 {
-    font-size: 18px;
-    font-weight: 600;
-    margin-bottom: 15px;
-    font-weight: bold;
-}
-
-.spelling-text h5,
-.spelling-text h4 {
-    font-size: 16px;
-    font-weight: 400;
-    margin-top: 10px;
-    font-weight: bold;
+#skills .container-fluid .gambar-skills .col-lg-3 img:hover {
+    filter: invert(15%);
 }

@@ -1,23 +1,3 @@
-/* Reset default styles */
-
-* {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-}
-
-#particles-js {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-    background-color: #ffffff; /* Bisa kamu ubah sesuai warna yang kamu mau */
-    pointer-events: auto;
-}
-/* Main Color */
-
 :root {
     --lightpurple: #bde1ff;
     --poppins: 'Poppins', sans-serif;
@@ -40,6 +20,16 @@
     background: white !important;
 }
 
+#particles-js {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background-color: #ffffff; /* Bisa kamu ubah sesuai warna yang kamu mau */
+    pointer-events: auto;
+}
 
 /*Navbar*/
 
@@ -100,49 +90,79 @@
     transition: 0.5;
 }
 
+/*About*/
 
-/* Content Section */
+#about {
+    padding-bottom: 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Geser konten ke tengah */
+    padding: 50px;
+    gap: 50px; /* Jarak antara teks dan gambar */
+}
 
-.spelling img {
+.text-about {
+    padding-top: 5rem;
+}
+
+.text-about h1 {
+    font-family: var(--abril);
+    font-size: 50px;
+    text-align: left;
+    padding-bottom: 50px;
+}
+
+.text-about h1:after {
+    content: '';
     display: block;
-    margin: 0 auto;
-    width: 430px;
-    height: auto;
-    margin-bottom: 20px;
-    margin-top: 30px;
+    border-bottom: 7px solid var(--purple);
+    width: 24%;
+    padding-bottom: 2px;
+    margin-bottom: -9px;
 }
 
-/* Project Info */
-
-.spelling-text {
-    width: 90%;
-    max-width: 900px;
-    text-align: center;
-    color: #000;
-    margin: 20px auto;
-    padding: 10px 20px;
-    line-height: 1.7;
-    font-weight: bold;
+.text-about span {
+    color: var(--purple);
 }
 
-.spelling-text h2 {
-    font-size: 20px;
-    font-weight: 600;
-    margin-bottom: 15px;
-    font-weight: bold;
+.text-about p {
+    font-family: var(--poppins);
+    font-size: 23px;
+    text-transform: none;
 }
 
-.spelling-text h3 {
-    font-size: 18px;
-    font-weight: 600;
-    margin-bottom: 15px;
-    font-weight: bold;
+.about-img {
+    padding-top: 4rem;
 }
 
-.spelling-text h5,
-.spelling-text h4 {
-    font-size: 16px;
-    font-weight: 400;
-    margin-top: 10px;
-    font-weight: bold;
+.cv {
+    padding-top: 50px;
+}
+
+.cv a {
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    padding: 10px 40px;
+    background: 808080;
+    border-radius: 10px;
+    border: 2px solid #caecff;
+    font-weight: 500;
+    transition: .3s;
+}
+
+.cv a:hover:nth-child(1) {
+    color: #808080;
+    background: transparent;
+}
+
+.cv a:nth-child(2) {
+    color: #808080;
+    background: transparent;
+    margin-left: 30px;
+    padding: 10px 30px;
+}
+
+.cv a:hover:nth-child(2) {
+    color: white;
+    background: #808080;
 }

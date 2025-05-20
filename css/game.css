@@ -1,0 +1,286 @@
+/* Reset default styles */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* Background Particle Layer */
+#particles-js {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background-color: #ffffff;
+    pointer-events: auto;
+}
+
+/* Variables */
+:root {
+    --lightpurple: #bde1ff;
+    --poppins: 'Poppins', sans-serif;
+    --black: #000000;
+    --abril: 'Abril Fatface', cursive;
+    --lato: 'Lato', sans-serif;
+    --purple: #000000;
+    --darkgray: #6E6C78;
+    --white: #FFFFFF;
+    --lightgray: #898796;
+}
+
+/* Text Selection */
+::selection {
+    color: var(--lightpurple);
+    background-color: var(--black);
+}
+
+/* Navbar */
+.navbar {
+    font-family: var(--poppins);
+    background: transparent;
+    padding: 0 20px;
+    height: 80px;
+}
+
+.navbar .container-fluid {
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+.navbar-toggler {
+    border: none !important;
+}
+
+.navbar-toggler:focus,
+.navbar-toggler:active,
+.navbar-toggler-icon:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+.navbar .container-fluid .navbar-item {
+    font-size: 28.5px;
+    letter-spacing: 2px;
+    font-weight: 550;
+    color: black;
+    text-decoration: none;
+}
+
+.navbar .container-fluid .span {
+    color: var(--purple)
+}
+
+.navbar .navbar-nav .nav-item a {
+    font-weight: 400;
+    font-size: 20px;
+    text-transform: uppercase;
+    color: black;
+}
+
+
+.d-flex .btn {
+    font-size: 0.9rem;
+    background-color: black;
+    border-radius: 50px;
+    color: var(--white);
+    text-transform: uppercase;
+    padding: 10px 16px;
+    transition: 0.3s;
+}
+
+.d-flex .btn:hover {
+    background-color: var(--purple);
+    color: var(--white);
+}
+
+/* Container & Slide */
+.container {
+    padding-top: 30px;
+    padding-left: 5%;
+    padding-right: 5%;
+}
+
+.content-slide {
+    max-width: 1000px;
+    margin: auto;
+    position: relative;
+}
+
+.imgslide img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.prev,
+.next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 16px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    background-color: rgba(0, 0, 0, 0.8);
+    transition: 0.3s;
+    z-index: 2;
+}
+
+.prev:hover,
+.next:hover {
+    background-color: rgba(255, 255, 255, 0.8);
+    color: black;
+}
+
+.next {
+    right: 0;
+}
+
+.content-slide .numberslide {
+    color: white;
+    font-size: 12px;
+    position: absolute;
+    top: 0;
+    left: 10px;
+}
+
+/* Dot navigation */
+.container .page {
+    text-align: center;
+    padding-top: 20px;
+}
+
+.page .dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 5px;
+    background-color: black;
+    display: inline-block;
+    transition: background-color 0.3s ease;
+    border-radius: 50%;
+}
+
+.page .active,
+.page .dot:hover {
+    background-color: silver;
+}
+
+/* Game Section */
+.game-text {
+    width: 100%;
+    padding: 20px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.main {
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+.game-text h2 {
+    color: var(--black);
+    letter-spacing: 1.5px;
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    text-transform: capitalize;
+    font-weight: bold;
+}
+
+.game-text h3 {
+    color: var(--black);
+    letter-spacing: 1.5px;
+    font-size: 18px;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.game-text h5,
+.game-text h4 {
+    color: var(--black);
+    letter-spacing: 1px;
+    line-height: 1.6;
+    font-size: 18px;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+/* Animasi */
+.fade {
+    animation: fade 1.5s;
+}
+
+@keyframes fade {
+    from { opacity: 0.4; }
+    to { opacity: 1; }
+}
+
+/* RESPONSIVE DESIGN */
+@media screen and (max-width: 768px) {
+    .navbar .container-fluid {
+        padding: 15px;
+    }
+
+    .d-flex .btn {
+        padding: 8px 14px;
+        font-size: 0.8rem;
+    }
+
+    .main {
+        padding: 15px;
+    }
+
+    .game-text h2 {
+        font-size: 1.2rem;
+    }
+
+    .game-text h5,
+    .game-text h4 {
+        font-size: 0.9rem;
+    }
+
+    .prev,
+    .next {
+        padding: 12px;
+        font-size: 16px;
+    }
+
+    .content-slide {
+        padding: 0 20px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .navbar .container-fluid {
+        padding: 10px;
+    }
+
+    .game-text h2 {
+        font-size: 1rem;
+    }
+
+    .game-text h5,
+    .game-text h4 {
+        font-size: 0.85rem;
+    }
+
+    .prev,
+    .next {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    .page .dot {
+        height: 12px;
+        width: 12px;
+    }
+}

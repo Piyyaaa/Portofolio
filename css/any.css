@@ -6,7 +6,16 @@
     box-sizing: border-box;
 }
 
-
+#particles-js {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background-color: #ffffff; /* Bisa kamu ubah sesuai warna yang kamu mau */
+    pointer-events: auto;
+}
 /* Main Color */
 
 :root {
@@ -36,7 +45,9 @@
 
 .navbar {
     font-family: var(--poppins);
-    background-color: white;
+    background: transparent;
+    padding: 0 20px;
+    height: 80px;
 }
 
 .navbar .container-fluid {
@@ -74,19 +85,20 @@
     color: black;
 }
 
+/* Button */
 .d-flex .btn {
-    font-size: 15px;
-    background-color: black;
+    font-size: 0.9rem;
+    background-color: var(--black);
     border-radius: 50px;
     color: var(--white);
     text-transform: uppercase;
-    padding: 13px 19px;
+    padding: 10px 16px;
+    transition: background-color 0.3s ease;
 }
 
 .d-flex .btn:hover {
     background-color: var(--purple);
     color: var(--white);
-    transition: 0.5;
 }
 
 .container {
@@ -140,43 +152,6 @@ pre:hover,
 }
 
 
-/*responsive*/
-
-@media screen and (max-width: 800px) {
-    .content-slide {
-        padding: 8px 50px 12px 50px;
-    }
-    .next {
-        right: 50px;
-        border-radius: 3px 0 0 3px;
-    }
-}
-
-.fade {
-    -webkit-animation-name: fade;
-    -webkit-animation-duration: 1.5s;
-    animation-name: fade;
-    animation-duration: 1.5s;
-}
-
-@-webkit-keyframes fade {
-    from {
-        opacity: .4;
-    }
-    to {
-        opacity: 1
-    }
-}
-
-@keyframes fade {
-    from {
-        opacity: .4;
-    }
-    to {
-        opacity: 1;
-    }
-}
-
 .page {
     text-align: center;
     margin-top: 15px;
@@ -199,19 +174,110 @@ pre:hover,
 }
 
 .any-text {
-    width: 80%;
-    max-width: 500px;
+    width: 90%;
+    max-width: 900px;
     text-align: center;
-    color: rgb(0, 0, 0);
+    color: #000;
     margin: 20px auto;
+    padding: 10px 20px;
+    line-height: 1.7;
+    font-weight: bold;
 }
 
 .any-text h2 {
     font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+.any-text h3 {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 15px;
+    font-weight: bold;
 }
 
 .any-text h5,
 .any-text h4 {
-    font-size: 16px;
-    margin-top: 5px;
+    font-size: 18px;
+    font-weight: 400;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+/* Fade Animation */
+.fade {
+    animation: fade 1.5s;
+}
+
+@keyframes fade {
+    from { opacity: 0.4; }
+    to { opacity: 1; }
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 768px) {
+    .navbar .container-fluid {
+        padding: 0 20px;
+    }
+
+    .navbar .navbar-brand {
+        font-size: 1.5rem;
+    }
+
+    .navbar .nav-link {
+        font-size: 0.9rem;
+    }
+
+    .content-slide {
+        padding: 0 20px;
+    }
+
+    .prev,
+    .next {
+        font-size: 1rem;
+        padding: 10px;
+    }
+
+    .any-text h2,
+    .any-text h3 {
+        font-size: 1.1rem;
+    }
+
+    .any-text h4,
+    .any-text h5 {
+        font-size: 0.9rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .navbar .navbar-brand {
+        font-size: 1.3rem;
+    }
+
+    .navbar .nav-link {
+        font-size: 0.85rem;
+    }
+
+    .prev,
+    .next {
+        font-size: 0.9rem;
+        padding: 8px;
+    }
+
+    .any-text h2,
+    .any-text h3 {
+        font-size: 1rem;
+    }
+
+    .any-text h4,
+    .any-text h5 {
+        font-size: 0.85rem;
+    }
+
+    .page .dot {
+        height: 10px;
+        width: 10px;
+    }
 }

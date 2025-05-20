@@ -1,14 +1,23 @@
 /* Reset default styles */
-
 * {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
 }
 
+/* Background particle effect */
+#particles-js {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background-color: #ffffff;
+    pointer-events: auto;
+}
 
-/* Main Color */
-
+/* Variables */
 :root {
     --lightpurple: #bde1ff;
     --poppins: 'Poppins', sans-serif;
@@ -21,22 +30,18 @@
     --lightgray: #898796;
 }
 
+/* Text selection */
 ::selection {
     color: var(--lightpurple);
-    background: CornflowerBlue;
     background-color: var(--black);
 }
 
-.nav-scrolled {
-    background: white !important;
-}
-
-
-/*Navbar*/
-
+/* Navbar */
 .navbar {
     font-family: var(--poppins);
-    background-color: white;
+    background: transparent;
+    padding: 0 20px;
+    height: 80px;
 }
 
 .navbar .container-fluid {
@@ -74,33 +79,38 @@
     color: black;
 }
 
+/* Button */
 .d-flex .btn {
-    font-size: 15px;
+    font-size: 0.9rem;
     background-color: black;
     border-radius: 50px;
     color: var(--white);
     text-transform: uppercase;
-    padding: 13px 19px;
+    padding: 10px 16px;
+    transition: 0.3s;
 }
 
 .d-flex .btn:hover {
     background-color: var(--purple);
     color: var(--white);
-    transition: 0.5;
 }
 
+/* Slide container */
 .container {
-    padding: 30px 0 0 0;
-    margin-left: 170px;
+    padding-top: 30px;
+    padding-left: 5%;
+    padding-right: 5%;
 }
 
 .content-slide {
     max-width: 1000px;
-    position: relative;
     margin: auto;
+    position: relative;
 }
 
-.imgslide {
+.imgslide img {
+    width: 100%;
+    height: auto;
     display: block;
 }
 
@@ -108,88 +118,50 @@
 .next {
     cursor: pointer;
     position: absolute;
-    top: 40%;
-    width: auto;
+    top: 50%;
+    transform: translateY(-50%);
     padding: 16px;
-    color: rgb(255, 255, 224);
+    color: white;
     font-weight: bold;
     font-size: 18px;
-    transition: 0.6s ease;
-    border-radius: 0 3px 3px 0;
-    user-select: none;
     background-color: rgba(0, 0, 0, 0.8);
+    transition: 0.3s;
+    z-index: 2;
 }
 
 .next {
     right: 0;
-    border-radius: 3px 0 0 3px;
 }
 
-pre:hover,
+.prev:hover,
 .next:hover {
     background-color: rgba(255, 255, 255, 0.8);
-    color: rgb(0, 0, 0);
+    color: black;
 }
 
 .content-slide .numberslide {
     color: white;
     font-size: 12px;
-    padding: 8px 12px;
     position: absolute;
     top: 0;
+    left: 10px;
 }
 
-
-/*responsive*/
-
-@media screen and (max-width: 800px) {
-    .content-slide {
-        padding: 8px 50px 12px 50px;
-    }
-    .next {
-        right: 50px;
-        border-radius: 3px 0 0 3px;
-    }
-}
-
-.fade {
-    -webkit-animation-name: fade;
-    -webkit-animation-duration: 1.5s;
-    animation-name: fade;
-    animation-duration: 1.5s;
-}
-
-.fade {
-    -webkit-animation-name: fade;
-    -webkit-animation-duration: 1.5s;
-    animation-name: fade;
-    animation-duration: 1.5s;
-}
-
-@keyframes fade {
-    from {
-        opacity: 0.4;
-    }
-    to {
-        opacity: 1;
-    }
-}
-
-.container .page {
+/* Dot navigation */
+.page {
     text-align: center;
     padding-top: 20px;
-    margin-right: 200px;
 }
 
 .page .dot {
     cursor: pointer;
     height: 15px;
     width: 15px;
-    margin: 0 2px;
-    background-color: rgb(0, 0, 0);
+    margin: 0 5px 20px;
+    background-color: black;
     display: inline-block;
-    transition: background-color 0.6s ease;
     border-radius: 50%;
+    transition: background-color 0.3s ease;
 }
 
 .page .active,
@@ -197,48 +169,119 @@ pre:hover,
     background-color: silver;
 }
 
-.freelance-text {
-    width: 1100px;
-}
-
+/* Main content section */
 .main {
-    width: 1150px;
-    max-width: 95%;
-    margin: 0 auto;
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: top;
+    padding: 20px;
 }
 
+.freelance-text {
+    width: 100%;
+    padding: 20px;
+    text-align: center;
+}
+
+/* Typography */
 .freelance-text h2 {
-    color: rgb(0, 0, 0);
-    letter-spacing: 2px;
-    font-size: 18px;
-    margin-bottom: 25px;
-    margin-left: 30px;
+    color: black;
+    letter-spacing: 1.5px;
+    font-size: 1.5rem;
+    margin-bottom: 20px;
     text-transform: capitalize;
-    padding: 5%;
-    margin-top: -50px;
 }
 
+.freelance-text h3,
+.freelance-text h4,
 .freelance-text h5 {
-    color: rgb(0, 0, 0);
-    letter-spacing: 2px;
-    line-height: 28px;
-    font-size: 15px;
-    margin-left: 62px;
-    padding: 2%;
-    margin-top: -100px;
-    margin-bottom: 45px;
+    color: black;
+    letter-spacing: 1px;
+    font-size: 1rem;
+    margin-bottom: 20px;
+    font-weight: bold;
 }
 
-.freelance-text h4 {
-    color: rgb(0, 0, 0);
-    letter-spacing: 2px;
-    line-height: 28px;
-    font-size: 15px;
-    margin-left: 62px;
-    padding: 2%;
-    margin-top: -95px;
-    margin-bottom: 45px;
+/* Animasi */
+.fade {
+    animation: fade 1.5s;
+}
+
+@keyframes fade {
+    from { opacity: 0.4; }
+    to { opacity: 1; }
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .navbar .container-fluid {
+        padding: 15px;
+    }
+
+    .navbar .navbar-brand {
+        font-size: 1.5rem;
+    }
+
+    .navbar .navbar-nav .nav-link {
+        font-size: 0.95rem;
+    }
+
+    .d-flex .btn {
+        padding: 8px 14px;
+        font-size: 0.8rem;
+    }
+
+    .main {
+        padding: 15px;
+    }
+
+    .freelance-text h2 {
+        font-size: 1.2rem;
+    }
+
+    .freelance-text h3,
+    .freelance-text h4,
+    .freelance-text h5 {
+        font-size: 0.95rem;
+    }
+
+    .prev,
+    .next {
+        font-size: 16px;
+        padding: 12px;
+    }
+
+    .content-slide {
+        padding: 0 20px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .navbar .container-fluid {
+        padding: 10px;
+    }
+
+    .freelance-text h2 {
+        font-size: 1rem;
+    }
+
+    .freelance-text h3,
+    .freelance-text h4,
+    .freelance-text h5 {
+        font-size: 0.85rem;
+    }
+
+    .prev,
+    .next {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    .page .dot {
+        height: 12px;
+        width: 12px;
+    }
 }
