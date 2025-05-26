@@ -1,20 +1,50 @@
-/* Reset default styles */
 * {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    color: white;
 }
 
-/* Background Particle Layer */
-#particles-js {
+body {
+  padding-top: 100px;
+  margin: 0;
+  background-color: #f9f9f9;
+  font-family: Arial, sans-serif;
+}
+
+/* Parallax */
+#parallax-container {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
+    height: 100vh;
+    overflow: hidden;
     z-index: -1;
-    background-color: #ffffff;
-    pointer-events: auto;
+}
+
+#parallax-container div {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+#parallax-container img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 120%;
+    min-height: 100vh;
+    height: auto;
+    transform: translate(-50%, -50%);
+    object-fit: cover;
+}
+
+/* Tambahan untuk ukuran layar kecil */
+@media (max-width: 768px) {
+    #parallax-container img {
+        width: 120vw; /* Beri ruang ekstra untuk menjaga parallax */
+    }
 }
 
 /* Variables */
@@ -36,251 +66,203 @@
     background-color: var(--black);
 }
 
-/* Navbar */
+/*Navbar*/
 .navbar {
-    font-family: var(--poppins);
-    background: transparent;
-    padding: 0 20px;
     height: 80px;
+    margin: 40px;
+    margin-top: 20px;
+    border-radius: 20px;
+    padding: 0.5rem;
 }
 
-.navbar .container-fluid {
-    padding-left: 50px;
-    padding-right: 50px;
+.navbar-brand {
+    font-weight: bold;
+}
+
+.nav-item {
+    font-size: 18px;
+    font-weight: bold;
 }
 
 .navbar-toggler {
-    border: none !important;
+    border: none;
+    font-size: 1.25rem;
 }
 
-.navbar-toggler:focus,
-.navbar-toggler:active,
-.navbar-toggler-icon:focus {
-    outline: none;
+.navbar-toggler:focus, .btn-close:focus {
     box-shadow: none;
+    outline: none;
 }
 
-.navbar .container-fluid .navbar-item {
-    font-size: 28.5px;
-    letter-spacing: 2px;
-    font-weight: 550;
-    color: black;
-    text-decoration: none;
-}
-
-.navbar .container-fluid .span {
-    color: var(--purple)
-}
-
-.navbar .navbar-nav .nav-item a {
-    font-weight: 400;
-    font-size: 20px;
-    text-transform: uppercase;
-    color: black;
-}
-
-
-.d-flex .btn {
-    font-size: 0.9rem;
-    background-color: black;
-    border-radius: 50px;
-    color: var(--white);
-    text-transform: uppercase;
-    padding: 10px 16px;
-    transition: 0.3s;
-}
-
-.d-flex .btn:hover {
-    background-color: var(--purple);
-    color: var(--white);
-}
-
-/* Container & Slide */
-.container {
-    padding-top: 30px;
-    padding-left: 5%;
-    padding-right: 5%;
-}
-
-.content-slide {
-    max-width: 1000px;
-    margin: auto;
+.nav-link {
+    color: #666777;
+    font-weight: 500;
     position: relative;
 }
 
-.imgslide img {
-    width: 100%;
-    height: auto;
-    display: block;
+.nav-link:hover, .nav-link.active {
+    color: #ffffff;
 }
 
-.prev,
-.next {
-    cursor: pointer;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    padding: 16px;
-    color: white;
-    font-weight: bold;
+.nav-scrolled {
+    background: grey !important;
+}
+
+.contact-button {
+    background-color: black;
+    color: #ffffff;
     font-size: 18px;
-    background-color: rgba(0, 0, 0, 0.8);
-    transition: 0.3s;
-    z-index: 2;
+    padding: 8px 20px;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: 0.3s background-color;
 }
 
-.prev:hover,
-.next:hover {
-    background-color: rgba(255, 255, 255, 0.8);
-    color: black;
+.contact-button:hover {
+    background-color: grey;
 }
 
-.next {
-    right: 0;
-}
-
-.content-slide .numberslide {
-    color: white;
-    font-size: 12px;
+@media (min-width: 991px) {
+.nav-link::before {
+    content: "";
     position: absolute;
-    top: 0;
-    left: 10px;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 2px;
+    background-color: black;
+    visibility: hidden;
+    transition: 0.3s ease-in-out;
 }
 
-/* Dot navigation */
-.container .page {
+.nav-link:hover::before, .nav-link.active::before {
+    width: 100%;
+    visibility: visible;
+}
+
+}
+
+/* Slide container */
+.slide-container {
+    max-width: 900px;
+    margin: 2rem auto 3rem auto;
+    position: relative;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6);
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(6px);
+    min-height: 500px;
+}
+
+.slide-container img {
+    width: 100%;
+    display: block;
+    border-radius: 15px;
+    transition: transform 0.6s ease;
+}
+
+.slide-container img:hover {
+    transform: scale(1.05);
+}
+
+/* Dots */
+.dots-container {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
     text-align: center;
-    padding-top: 20px;
+    padding: 0;
+    background: transparent;
+    width: auto;
+    border-radius: 0;
+    z-index: 10;
 }
 
-.page .dot {
+.dot {
     cursor: pointer;
     height: 15px;
     width: 15px;
-    margin: 0 5px;
-    background-color: black;
+    margin: 0 7px;
+    background-color: #bbb;
+    border-radius: 50%;
     display: inline-block;
     transition: background-color 0.3s ease;
-    border-radius: 50%;
 }
 
-.page .active,
-.page .dot:hover {
-    background-color: silver;
+.dot.active,
+.dot:hover {
+    background-color: #000000;
 }
 
-/* Game Section */
-.game-text {
-    width: 100%;
-    padding: 20px;
+/* Project info card */
+.project-info {
+    max-width: 900px;
+    margin: 0 auto 4rem auto;
+    background: rgba(255, 255, 255, 0.12);
+    border-radius: 15px;
+    padding: 2rem 3rem;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(10px);
     text-align: center;
-    font-weight: bold;
 }
 
-.main {
-    width: 100%;
-    max-width: 1200px;
-    margin: auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 20px;
+.project-info h2 {
+    font-weight: 700;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #000000;
 }
 
-.game-text h2 {
-    color: var(--black);
-    letter-spacing: 1.5px;
+.project-info h3 {
+    font-weight: 400;
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+    line-height: 1.5;
+    color: #eee;
+}
+
+.project-info h4,
+.project-info h5 {
+    font-weight: 600;
+    font-size: 1rem;
+    margin-bottom: 0.7rem;
+    color: #ddd;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    nav.navbar {
+    padding: 0.6rem 1.5rem;
+    }
+
+    .project-info {
+    padding: 1.5rem 2rem;
+    }
+
+    .project-info h2 {
     font-size: 1.5rem;
-    margin-bottom: 20px;
-    text-transform: capitalize;
-    font-weight: bold;
-}
-
-.game-text h3 {
-    color: var(--black);
-    letter-spacing: 1.5px;
-    font-size: 18px;
-    margin-bottom: 10px;
-    font-weight: bold;
-}
-
-.game-text h5,
-.game-text h4 {
-    color: var(--black);
-    letter-spacing: 1px;
-    line-height: 1.6;
-    font-size: 18px;
-    margin-bottom: 5px;
-    font-weight: bold;
-}
-
-/* Animasi */
-.fade {
-    animation: fade 1.5s;
-}
-
-@keyframes fade {
-    from { opacity: 0.4; }
-    to { opacity: 1; }
-}
-
-/* RESPONSIVE DESIGN */
-@media screen and (max-width: 768px) {
-    .navbar .container-fluid {
-        padding: 15px;
     }
 
-    .d-flex .btn {
-        padding: 8px 14px;
-        font-size: 0.8rem;
-    }
-
-    .main {
-        padding: 15px;
-    }
-
-    .game-text h2 {
-        font-size: 1.2rem;
-    }
-
-    .game-text h5,
-    .game-text h4 {
-        font-size: 0.9rem;
-    }
-
-    .prev,
-    .next {
-        padding: 12px;
-        font-size: 16px;
-    }
-
-    .content-slide {
-        padding: 0 20px;
+    .project-info h3 {
+    font-size: 1rem;
     }
 }
 
-@media screen and (max-width: 480px) {
-    .navbar .container-fluid {
-        padding: 10px;
+@media (max-width: 480px) {
+    .project-info {
+    padding: 1rem 1rem;
     }
 
-    .game-text h2 {
-        font-size: 1rem;
+    .project-info h2 {
+    font-size: 1.3rem;
     }
 
-    .game-text h5,
-    .game-text h4 {
-        font-size: 0.85rem;
-    }
-
-    .prev,
-    .next {
-        font-size: 14px;
-        padding: 10px;
-    }
-
-    .page .dot {
-        height: 12px;
-        width: 12px;
+    .project-info h3,
+    .project-info h4,
+    .project-info h5 {
+    font-size: 0.9rem;
     }
 }

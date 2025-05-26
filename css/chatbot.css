@@ -1,20 +1,43 @@
-/* Reset default styles */
-
-* {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
+body {
+  padding-top: 100px;
+  margin: 0;
+  background-color: #f9f9f9;
+  font-family: Arial, sans-serif;
 }
 
-#particles-js {
+/* Parallax */
+#parallax-container {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
+    height: 100vh;
+    overflow: hidden;
     z-index: -1;
-    background-color: #ffffff; /* Bisa kamu ubah sesuai warna yang kamu mau */
-    pointer-events: auto;
+}
+
+#parallax-container div {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+#parallax-container img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 120%;
+    min-height: 100vh;
+    height: auto;
+    transform: translate(-50%, -50%);
+    object-fit: cover;
+}
+
+/* Tambahan untuk ukuran layar kecil */
+@media (max-width: 768px) {
+    #parallax-container img {
+        width: 120vw; /* Beri ruang ekstra untuk menjaga parallax */
+    }
 }
 /* Main Color */
 
@@ -36,167 +59,229 @@
     background-color: var(--black);
 }
 
-.nav-scrolled {
-    background: white !important;
-}
-
-
 /*Navbar*/
-
 .navbar {
-    font-family: var(--poppins);
-    background: transparent;
-    padding: 0 20px;
     height: 80px;
+    margin: 40px;
+    margin-top: 20px;
+    border-radius: 20px;
+    padding: 0.5rem;
 }
 
-.navbar .container-fluid {
-    padding-left: 50px;
-    padding-right: 50px;
+.navbar-brand {
+    font-weight: bold;
+}
+
+.nav-item {
+    font-size: 18px;
+    font-weight: bold;
 }
 
 .navbar-toggler {
-    border: none !important;
+    border: none;
+    font-size: 1.25rem;
 }
 
-.navbar-toggler:focus,
-.navbar-toggler:active,
-.navbar-toggler-icon:focus {
-    outline: none;
+.navbar-toggler:focus, .btn-close:focus {
     box-shadow: none;
+    outline: none;
 }
 
-.navbar .container-fluid .navbar-item {
-    font-size: 28.5px;
-    letter-spacing: 2px;
-    font-weight: 550;
-    color: black;
-    text-decoration: none;
+.nav-link {
+    color: #666777;
+    font-weight: 500;
+    position: relative;
 }
 
-.navbar .container-fluid .span {
-    color: var(--purple)
+.nav-link:hover, .nav-link.active {
+    color: #ffffff;
 }
 
-.navbar .navbar-nav .nav-item a {
-    font-weight: 400;
-    font-size: 20px;
-    text-transform: uppercase;
-    color: black;
+.nav-scrolled {
+    background: grey !important;
 }
 
-.d-flex .btn {
-    font-size: 15px;
+.contact-button {
     background-color: black;
+    color: #ffffff;
+    font-size: 18px;
+    padding: 8px 20px;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: 0.3s background-color;
+}
+
+.contact-button:hover {
+    background-color: grey;
+}
+
+@media (min-width: 991px) {
+.nav-link::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 2px;
+    background-color: black;
+    visibility: hidden;
+    transition: 0.3s ease-in-out;
+}
+
+.nav-link:hover::before, .nav-link.active::before {
+    width: 100%;
+    visibility: visible;
+}
+
+}
+
+/* Button */
+.d-flex .btn {
+    font-size: 0.9rem;
+    background-color: var(--black);
     border-radius: 50px;
     color: var(--white);
     text-transform: uppercase;
-    padding: 13px 19px;
+    padding: 10px 16px;
+    transition: background-color 0.3s ease;
 }
 
 .d-flex .btn:hover {
     background-color: var(--purple);
     color: var(--white);
-    transition: 0.5;
 }
 
-
-/* Content Section */
-
-.container3 {
-    padding: 50px 0;
-    text-align: center;
+/* Slide container */
+.slide-container {
+  max-width: 400px;   /* Lebar lebih kecil supaya foto gak terlalu besar */
+  height: 600px;      /* Batasi tinggi juga */
+  margin: 2rem auto 3rem auto;
+  position: relative;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6);
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(6px);
+  display: flex;
+  flex-direction: column; /* supaya dot bisa di bawah */
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 50px; /* beri ruang buat dot */
+  border: 2px solid black;
 }
 
-.content-slide3 {
-    max-width: 90%;
-    margin: auto;
-    position: relative;
+.slide-container img {
+  max-height: 90%;
+  width: auto;
+  max-width: 100%;
+  border-radius: 15px;
+  transition: transform 0.6s ease;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto;
 }
 
-.imgslide img {
-    max-width: 100%;
-    height: auto;
-    margin-bottom: 5px;
+.slide-container img:hover {
+    transform: scale(1.05);
 }
 
-
-/* Navigation arrows */
-
-.prev,
-.next {
-    cursor: pointer;
+/* Dots */
+.dots-container {
     position: absolute;
-    top: 50%;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    padding: 0;
+    background: transparent;
     width: auto;
-    padding: 12px;
-    color: white;
-    font-size: 18px;
-    border-radius: 50%;
-    background-color: rgba(0, 0, 0, 0.6);
-    transform: translateY(-50%);
+    border-radius: 0;
+    z-index: 10;
 }
 
-.next {
-    right: 0;
-}
-
-
-/* Dots indicator */
-
-.page3 {
-    text-align: center;
-    margin-top: 15px;
-}
-
-.page3 .dot {
+.dot {
     cursor: pointer;
-    height: 12px;
-    width: 12px;
-    margin: 0 5px;
-    background-color: rgb(0, 0, 0);
-    display: inline-block;
-    transition: background-color 0.6s ease;
+    height: 15px;
+    width: 15px;
+    margin: 0 7px;
+    background-color: #bbb;
     border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.3s ease;
 }
 
-.page3 .active,
-.page3 .dot:hover {
-    background-color: silver;
+.dot.active,
+.dot:hover {
+    background-color: #000000;
 }
 
-
-/* Project Info */
-
-.chatbot-text {
-    width: 90%;
+/* Project info card */
+.project-info {
     max-width: 900px;
+    margin: 0 auto 4rem auto;
+    background: rgba(255, 255, 255, 0.12);
+    border-radius: 15px;
+    padding: 2rem 3rem;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(10px);
     text-align: center;
-    color: #000;
-    margin: 20px auto;
-    padding: 10px 20px;
-    line-height: 1.7;
-    font-weight: bold;
 }
 
-.chatbot-text h2 {
-    font-size: 24px;
+.project-info h2 {
+    font-weight: 700;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #000000;
+}
+
+.project-info h3 {
+    font-weight: 400;
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+    line-height: 1.5;
+    color: #eee;
+}
+
+.project-info h4,
+.project-info h5 {
     font-weight: 600;
-    margin-bottom: 15px;
-    font-weight: bold;
+    font-size: 1rem;
+    margin-bottom: 0.7rem;
+    color: #ddd;
 }
 
-.chatbot-text h3 {
-    font-size: 18px;
-    font-weight: 400;
-    margin-bottom: 15px;
-    font-weight: bold;
+/* Responsive */
+@media (max-width: 768px) {
+    nav.navbar {
+    padding: 0.6rem 1.5rem;
+    }
+
+    .project-info {
+    padding: 1.5rem 2rem;
+    }
+
+    .project-info h2 {
+    font-size: 1.5rem;
+    }
+
+    .project-info h3 {
+    font-size: 1rem;
+    }
 }
 
-.chatbot-text h5,
-.chatbot-text h4 {
-    font-size: 16px;
-    font-weight: 400;
-    margin-top: 10px;
-    font-weight: bold;
+@media (max-width: 480px) {
+    .project-info {
+    padding: 1rem 1rem;
+    }
+
+    .project-info h2 {
+    font-size: 1.3rem;
+    }
+
+    .project-info h3,
+    .project-info h4,
+    .project-info h5 {
+    font-size: 0.9rem;
+    }
 }
